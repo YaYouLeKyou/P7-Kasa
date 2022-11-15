@@ -1,13 +1,13 @@
 import React from 'react'
 import NavBar from '../components/NavBar';
 
-const APropos = () => {
+const ProductPage = () => {
   return (
     <div>
       <NavBar />
-      APropos
+      Product page
     </div>
   );
 }
 
-export default APropos
+export default ProductPage

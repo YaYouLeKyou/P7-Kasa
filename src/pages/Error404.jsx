@@ -1,13 +1,13 @@
 import React from 'react'
 import NavBar from '../components/NavBar';
 
-const APropos = () => {
+const Error404 = () => {
   return (
     <div>
       <NavBar />
-      APropos
+      Error404
     </div>
   );
 }
 
-export default APropos
+export default Error404
