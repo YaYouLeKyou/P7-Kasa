@@ -4,14 +4,14 @@
 // }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-$font-1: 'Montserrat', sans-serif;
+$font-1: 'Montserrat',
+sans-serif;
 
 $color-1: #FF6060;
 $color-2: #f79696;
 $black: #000000;
 $white: rgba(255, 255, 255, 0.816);
-$shadowCard: 0px 0px 14px 7px rgba(255,96,96,0.7); 
-
+$shadowCard: 0px 0px 14px 7px rgba(255, 96, 96, 0.7);
 
 * {
   font-family: $font-1;
@@ -23,16 +23,17 @@ $shadowCard: 0px 0px 14px 7px rgba(255,96,96,0.7);
   border: none;
   text-decoration: none;
   color: $color-1;
+
   &::selection {
     background: $color-2;
   }
 }
 
-html,body{
-  height: 100%;
-}
-#root{
+html,
+body {
   height: 100%;
 }
 
-
+#root {
+  height: 100%;
+}

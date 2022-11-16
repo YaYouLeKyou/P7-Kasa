@@ -1,21 +1,32 @@
 .NavBar {
+  padding: 0 1rem;
+
+  @media screen and(max-width: 500px) {
+    padding: 0;
+  }
+
   nav {
     height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+
     img {
       height: 70px;
+
       @media screen and(max-width: 900px) {
         height: 60px;
       }
+
       @media screen and(max-width: 500px) {
         height: 55px;
       }
+
       @media screen and(max-width: 400px) {
         height: 45px;
       }
     }
+
     ul {
       width: 100%;
       display: flex;
@@ -26,6 +37,7 @@
       @media screen and(max-width: 900px) {
         font-size: 18px;
       }
+
       @media screen and(max-width: 500px) {
         font-size: 12px;
         text-transform: uppercase;
@@ -37,6 +49,7 @@
         @media screen and(max-width: 900px) {
           margin-right: 2.5rem;
         }
+
         @media screen and(max-width: 500px) {
           margin-right: 1.5rem;
         }
