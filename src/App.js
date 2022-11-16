@@ -1,4 +1,6 @@
+
 import { Routes, Route } from 'react-router-dom';
+
 
 //page import
 import About from './pages/About';
@@ -7,7 +9,12 @@ import ProductPage from './pages/ProductPage';
 import Home from './pages/Home';
 import Layout from './components/Layout';
 
+
+
 function App() {
+
+
+
   return (
     <>
       <Routes>
@@ -16,7 +23,10 @@ function App() {
           <Route index element={<Home />} />
           {/* Routage Page */}
           <Route path="/home" element={<Home />} />
-          <Route path="/product_page" element={<ProductPage />} />
+          <Route
+            path={`/product_page/:id`}
+            element={<ProductPage />}
+          />
           <Route path="/about" element={<About />} />
           {/* Erreur URL */}
           <Route path="*" element={<Error404 />} />
