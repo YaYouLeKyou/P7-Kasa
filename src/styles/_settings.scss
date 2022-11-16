@@ -4,12 +4,11 @@
 // }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-$font-1: 'Montserrat',
-sans-serif;
+$font-1: 'Montserrat', sans-serif;
 
 $color-1: #FF6060;
 $color-2: #f79696;
-$black: rgb(40, 40, 40);
+$black: #000000;
 $white: rgba(244, 244, 244, 0.816);
 
 * {
@@ -22,15 +21,16 @@ $white: rgba(244, 244, 244, 0.816);
   border: none;
   text-decoration: none;
   color: $color-1;
-
   &::selection {
     background: $color-2;
   }
 }
 
-
-.App {
-  max-width: 1440px;
-  margin: 40px auto;
-  position: relative;
+html,body{
+  height: 100%;
 }
+#root{
+  height: 100%;
+}
+
+
