@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-const CollapseAP = ({ propo }) => {
+const Collapse = ({ title, descrition, equipments }) => {
   const ChevronDown = <i className="fa-solid fa-chevron-down"></i>;
   const ChevronUp = <i className="fa-solid fa-chevron-up"> </i>;
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const CollapseAP = ({ propo }) => {
     <div className="CollapseAP">
       <div className="titleCollapse">
         <button onClick={() => setIsOpen(!isOpen)}>
-          {propo.title}
+          {title}
           <span>{isOpen ? ChevronUp : ChevronDown}</span>
         </button>
       </div>
@@ -23,10 +23,18 @@ const CollapseAP = ({ propo }) => {
             : { height: '0px' }
         }
       >
-        <div className="textCollapse">{propo.text}</div>
+        <div className="textCollapse equipements">
+          {title === 'Description' && descrition}
+          {title === 'Equipements' &&
+            equipments?.map((equip, i) => (
+              <p key={i} className='equip'>
+                {equip}
+              </p>
+            ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default CollapseAP;
+export default Collapse;
