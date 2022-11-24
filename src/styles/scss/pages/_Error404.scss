@@ -16,11 +16,11 @@
             font-size: 288px;
             font-weight: 700;
 
-            @media screen and(max-width: 900px) {
+            @media screen and (max-width: 900px) {
                 font-size: 200px;
             }
 
-            @media screen and(max-width: 500px) {
+            @media screen and (max-width: 500px) {
                 font-size: 96px;
                 margin-top: 5rem;
             }
@@ -30,11 +30,11 @@
             font-size: 36px;
             font-weight: 500;
 
-            @media screen and(max-width: 900px) {
+            @media screen and (max-width: 900px) {
                 font-size: 18px;
             }
 
-            @media screen and(max-width: 500px) {
+            @media screen and (max-width: 500px) {
                 font-size: 20px;
             }
         }
@@ -44,7 +44,7 @@
         font-size: 16px;
         font-weight: 500;
 
-        @media screen and(max-width: 500px) {
+        @media screen and (max-width: 500px) {
             font-size: 14px;
         }
     }

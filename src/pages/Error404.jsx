@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Error404 = () => {
+  document.title = "Kasa - Page introuvable";
   return (
     <main className="ErrorMain">
       <div className="ErrorTitle">

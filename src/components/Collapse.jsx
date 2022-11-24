@@ -1,40 +1,53 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 
-const Collapse = ({ title, descrition, equipments }) => {
-  const ChevronDown = <i className="fa-solid fa-chevron-down"></i>;
-  const ChevronUp = <i className="fa-solid fa-chevron-up"> </i>;
-  const [isOpen, setIsOpen] = useState(false);
-  const parentRef = useRef();
+export default function Collapse({ props, title }) {
+    const ChevronDown = <i className="fa-solid fa-chevron-down"></i>;
+    const ChevronUp = <i className="fa-solid fa-chevron-up"> </i>;
+    const [toggle, setToggle] = useState(false);
+    const [heightEl, setHeightEl] = useState();
 
-  return (
-    <div className="CollapseAP">
-      <div className="titleCollapse">
-        <button onClick={() => setIsOpen(!isOpen)}>
-          {title}
-          <span>{isOpen ? ChevronUp : ChevronDown}</span>
-        </button>
-      </div>
-      <div
-        className="content-parent"
-        ref={parentRef}
-        style={
-          isOpen
-            ? { height: parentRef.current.scrollHeight + 'px' }
-            : { height: '0px' }
+    const toggleState = () => {
+        setToggle(!toggle);
+    };
+
+    const refHeight = useRef();
+
+    useEffect(() => {
+        setHeightEl(`${refHeight.current.scrollHeight}px`);
+    }, []);
+
+    const displayProps = () => {
+        if (typeof props === "object") {
+            return (
+                <ul>
+                    {props.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+            );
+        } else {
+            return <p>{props}</p>;
         }
-      >
-        <div className="textCollapse equipements">
-          {title === 'Description' && descrition}
-          {title === 'Equipements' &&
-            equipments?.map((equip, i) => (
-              <p key={i} className='equip'>
-                {equip}
-              </p>
-            ))}
-        </div>
-      </div>
-    </div>
-  );
-};
+    };
 
-export default Collapse;
+    return (
+        <div className="collapse">
+            <div onClick={toggleState} className="collapse_visible">
+                <h3>{title}</h3>
+                <div className="collapse_icon">
+                    {toggle ? ChevronUp : ChevronDown}
+                </div>
+            </div>
+
+            <div
+                ref={refHeight}
+                className={
+                    toggle ? "collapse_toggle animated" : "collapse_toggle"
+                }
+                style={{ height: toggle ? `${heightEl}` : "0px" }}
+            >
+                {displayProps()}
+            </div>
+        </div>
+    );
+}

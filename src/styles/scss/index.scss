@@ -2,20 +2,19 @@
 @import './settings';
 
 
-//Pages Import
+//Styles Pages
 @import './pages/Home';
-@import './pages/ProductPage';
 @import './pages/About';
+@import './pages/Product';
 @import './pages/Error404';
 
-//Components Import
 
-@import './components/Navbar';
-@import './components/Banner';
-@import './components/Footer';
+//Styles Components
 @import './components/Layout';
-@import './components/CardLocation';
-@import './components/CollapseAbout';
-@import './components/ProductDetails';
-@import './components/TagName';
+@import './components/Navbar';
+@import './components/Footer';
+@import './components/Banner';
+@import './components/Card';
+@import './components/Collapse';
 @import './components/Carousel';
+@import './components/TagName';

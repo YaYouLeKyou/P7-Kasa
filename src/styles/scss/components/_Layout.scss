@@ -1,13 +1,19 @@
 .bodyLayout {
   height: 100%;
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
+
   .Layout {
-    width: 100%;
+    width: 90%;
     max-width: 1240px;
-    margin: 40px auto 0;
+    min-width: 335px;
+    margin: 20px;
     position: relative;
     flex-grow: 1;
+
+    @media screen and (min-width: 500px) {
+      margin: 40px auto;
+    }
   }
 }

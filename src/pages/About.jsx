@@ -1,20 +1,25 @@
-import React from 'react'
+import React from 'react';
 import Banner from '../components/Banner';
-import CollapseAP from '../components/CollapseAbout';
-import { A_Propos } from '../data/data';
-import heroBG from '../styles/assets/images/heroBGaPropos.png';
+import Collapse from '../components/Collapse';
+import Data from '../data/about';
+import BGBanner from '../assets/about_bg_banner.png';
 
-const APropos = () => {
-  return (
-    <main className="aPropos">
-      <Banner img={heroBG} text1={''} text2={''} />
-      <div className="contentA-Propos">
-        {A_Propos.map((propo)=>(
-          <CollapseAP propo={propo} key={propo.id}/>
-        ))}
-      </div>
-    </main>
-  );
+export default function About() {
+    document.title = "Kasa - A propos de nous";
+    return (
+        <main className="a_propos">
+            <Banner img={BGBanner} />
+            <div className="display_collapses">
+                {Data.map((props, index) => (
+                    <div className="collapses" key={index}>
+                        <Collapse
+                            key={index}
+                            props={Data[index].text}
+                            title={Data[index].title}
+                        />
+                    </div>
+                ))}
+            </div>
+        </main>
+    );
 }
-
-export default APropos

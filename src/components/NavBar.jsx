@@ -1,38 +1,40 @@
 import React from 'react';
-import Logo from '../styles/assets/images/logo.png';
+import Logo from '../assets/logo.png';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
-  return (
-    <header className="NavBar">
-      <nav>
-        <img src={Logo} alt="logo-Kasa" />
-        <ul>
-          <li>
-            <NavLink
-              to={'/home'}
-              style={({ isActive }) => ({
-                textDecoration: isActive ? 'underline' : 'blue',
-                color: isActive ? '#FF6060' : '#FF6060',
-              })}
-            >
-              Accueil
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to={'/about'}
-              style={({ isActive }) => ({
-                textDecoration: isActive ? 'underline' : 'blue',
-              })}
-            >
-              A Propos
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  );
-};
-
-export default NavBar;
+export default function NavBar() {
+    return (
+        <header>
+                <img src={Logo} alt="logo kasa" className="logo" />
+            <nav>
+                <ul>
+                    <li>
+                        <NavLink
+                            to="/"
+                            end
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "accueil_navbar active"
+                                    : "accueil_navbar"
+                            }
+                        >
+                            Accueil
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/about"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "about_navbar active"
+                                    : "about_navbar"
+                            }
+                        >
+                            A Propos
+                        </NavLink>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    );
+}
